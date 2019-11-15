@@ -1,5 +1,9 @@
 class AnimalSightingsController < ApplicationController
     before_action :set_sighting, only: [ :update, :destroy]
+    def show
+        animal_sightings_for_animal = AnimalSighting.where(animal_id: params[:id])
+        render json: animal_sightings_for_animal
+    end
     def create
         new_sighting = AnimalSighting.new(sighting_params)
         if new_sighting.save

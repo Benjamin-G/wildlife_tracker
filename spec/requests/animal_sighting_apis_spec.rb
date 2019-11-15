@@ -9,6 +9,12 @@ RSpec.describe "AnimalSightingApis", type: :request do
     let!(:animal_sight2){AnimalSighting.create(date: DateTime.parse('3rd Feb 2001 04:05:06+03:30'), lat: 12.232, long: 123.233, animal_id: animal.id)}
     let(:animal_sighting_id){animal_sight1.id}
 
+    describe "GET /animal_sighting/:animal_id" do
+        before { get "/animal_sightings/#{animal_id}"}
+        it "should return a 200 http response" do
+          expect(response).to have_http_status(200)
+        end
+    end
     describe "POST /animal_sighting" do
         it "should creates an animal sighting" do
           headers = {
