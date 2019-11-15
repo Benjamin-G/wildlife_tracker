@@ -17,7 +17,7 @@ RSpec.describe "Animal API", type: :request do
 
   describe "POST /animals" do
       it "should creates an animal " do
-          headers = {
+        headers = {
             "ACCEPT" => "application/json"
         }
         body = {animal: {common_name: "Cat", latin_name: "Felis catus", kingdom: "	Animalia"}}
