@@ -38,7 +38,7 @@ RSpec.describe "Animal API", type: :request do
   end
 
   describe "PUT /animals/:id" do
-      it "should return status code 204" do
+      it "should return status code 200" do
         headers = {
             "ACCEPT" => "application/json"
         }
